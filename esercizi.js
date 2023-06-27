@@ -173,3 +173,19 @@ var countSheep = function (num){
 }
 
 console.log(countSheep(30));
+
+
+function numberToString(num) {
+    stringedNum = num.toString();
+    return stringedNum;
+}
+
+ 
+
+  console.log(numberToString(777));
+
+  //soluzione alternativa sotto:
+
+  function numberToString(num) {
+    return ''+num;
+  }
