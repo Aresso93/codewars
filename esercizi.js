@@ -73,6 +73,92 @@ console.log(simpleMultiplication(7));
 //0 => [0]
 //
 
-function digitize(n) {
-    //code here
+//Every day you rent the car costs $40. If you rent the car for 7 or more days, you get $50 off your total. Alternatively, if you rent the car for 3 or more days, you get $20 off your total.
+//
+//Write a code that gives out the total amount for different days(d).
+
+function rentalCarCost(d) {
+    
+let cost = 40;
+
+let totalCost = d * cost;
+
+if (d >= 3 && d < 7) {
+    discountedCost = totalCost - 20;
+    return discountedCost;
+} else if (d >= 7) {
+    
+    superDiscountedCost = totalCost - 50
+    return superDiscountedCost;
+} else {
+    return totalCost;
+}
+
+
+
+
+
   }
+
+console.log(rentalCarCost(7));
+
+
+//Create a function that gives a personalized greeting. This function takes two parameters: name and owner.
+//
+//Use conditionals to return the proper message:
+
+function greet (name, owner) {
+
+ if (name === owner) {
+     return 'Hello boss';
+ } else {
+     return 'Hello guest';
+ }
+  }
+
+  console.log(greet('Steve', 'Alex'));
+
+ // Write a function which converts the input string to uppercase
+
+ function makeUpperCase(str) {
+ 
+    strUpperCase = str.toUpperCase();
+ return strUpperCase;
+  }
+
+//If you can't sleep, just count sheep!!
+//Task:
+//
+//Given a non-negative integer, 3 for example, return a string with a murmur: "1 sheep...2 sheep...3 sheep...". Input will always be valid, i.e. no negative integers.
+//  
+
+ 
+    //your code here
+//     let numCount = num + ' sheep...';
+//     return numCount;
+//   }
+
+// console.log((countSheep(50)));
+
+// {
+ 
+//     for (let i = num; i > 0; i++)
+//         document.write(i + " sheep...");
+
+// }
+// return document;
+//   }
+
+//soluzione qui sopra che ammazza il browser  
+
+var countSheep = function (num){
+
+    for (let i = 1; i <= num; i++) {
+        let loopedSheep = (i + ' sheep...');
+        return loopedSheep;
+    }
+
+    
+}
+
+console.log(countSheep(30));
