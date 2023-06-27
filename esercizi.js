@@ -38,12 +38,23 @@
 
 function noSpace(x){
 
-    let noSpaceX = x.replace(/ /g,'');
+    const noSpaceX = x.replace(/ /g, '');
     return noSpaceX;
 
 }
 
 console.log(noSpace('8 j 8   mBliB8g  imjB8B8  jl  B'));
+
+
+
+//questo qui sotto è un altro metodo che ci ha fatto vedere Andrea
+
+function noSpace(x) {
+    const wordArray = x.split(' ')
+    const noSpace = wordArray.join('');
+    return noSpace;
+}
+
 
 //"8 j 8   mBliB8g  imjB8B8  jl  B" -> "8j8mBliB8gimjB8B8jlB"
 //"8 8 Bi fk8h B 8 BB8B B B  B888 c hl8 BhB fd" -> "88Bifk8hB8BB8BBBB888chl8BhBfd"
@@ -76,3 +87,22 @@ console.log(simpleMultiplication(7));
 function digitize(n) {
     //code here
   }
+
+  //alla fine degli esercizi metteremo sempre un console log fatto tipo così removeAllSpaces("pippo") === "pippo"  e se ci printa true vuol dire che l'esercizio è giusto
+
+  function calculateBMI(weight, height) {
+        const proportion = weight/(height**2);
+
+        if (proportion <= 18.5) {
+            return 'Underweight';
+        } else if (proportion > 18.5 && proportion <= 25){
+            return 'Normal';
+        } else if (proportion > 25 && proportion <= 30){
+            return 'Overweight';
+        } else {
+            return 'Obese';
+        }
+    }
+
+console.log('calculateBMI', calculateBMI(170, 1.60)==='Obese');
+console.log('calculateBMI', calculateBMI(57, 1.66))
