@@ -217,3 +217,76 @@ function otherAngle(a, b) {
   }
 
 console.log(otherAngle(130, 10));
+
+//Write a function that accepts an integer n and a string s as parameters, and returns a string of s repeated exactly n times.
+
+function repeatStr (n, s) {
+
+let bigString = '';
+
+while (n > 0) {
+
+    bigString += s;
+    n--;
+    
+}
+return bigString;
+}
+
+console.log(repeatStr(10, 'abc'));
+
+function doTheThing(a, b){
+
+    let blabla = '';
+
+    while (b > 0) {
+        blabla = blabla + a;
+        b--
+    }
+return blabla
+}
+
+console.log(doTheThing('abc', 10));
+
+
+function updateLight(current) {
+  
+    if (current === 'green') {
+       return 'yellow' 
+    } else if (current === 'yellow') {
+        return 'red';
+    } else {
+        return 'green';
+    }
+  
+  }
+
+  console.log(updateLight('red'));
+
+  function feast(beast, dish) {
+ 
+    if (beast [0] === dish [0] && beast[beast.length-1] === dish [dish.length-1]){
+        return true;
+    } else {
+        return false;
+    }
+
+    }
+
+    console.log(feast('chickadee students', 'chocolate cakes'));
+
+
+    function twiceAsOld(dadYearsOld, sonYearsOld) {
+    
+      if (dadYearsOld === 2*sonYearsOld){
+        return 2*sonYearsOld - dadYearsOld;
+      } else if (dadYearsOld !== 2*sonYearsOld && dadYearsOld - 2*sonYearsOld >0){
+        return dadYearsOld - 2*sonYearsOld;
+      } else {
+        return 2*sonYearsOld - dadYearsOld;
+      }
+
+
+      }
+
+      console.log(twiceAsOld(30, 15));
