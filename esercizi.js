@@ -291,5 +291,23 @@ function updateLight(current) {
 
       console.log(twiceAsOld(30, 15));
 
+//In this kata you will create a function that takes a 
+//list of non-negative integers and strings and returns a new list with the strings filtered out.
 
-  
+
+
+function filter_list(l) {
+    return l.filter(element => typeof(element) === 'number');
+}
+
+//Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
+
+function removeExclamationMarks(s) {
+    if (s.includes('!')) {
+     const newString = s.replace('!', ''); 
+     return newString;
+    } else {
+     return s;
+    }
+ }
+ 
