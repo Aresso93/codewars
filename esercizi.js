@@ -21,7 +21,7 @@
 
 //     let abbrFullName = abbrFirstName + abbrLastName; 
 //     let abbrFullNameUpperCase = abbrFullName.toUpperCase();
-    
+
 //     if (!name.includes(' ')) {
 //         return name; 
 //     } else {
@@ -36,7 +36,7 @@
 // console.log(abbrevName(name))
 
 
-function noSpace(x){
+function noSpace(x) {
 
     const noSpaceX = x.replace(/ /g, '');
     return noSpaceX;
@@ -89,27 +89,27 @@ console.log(simpleMultiplication(7));
 //Write a code that gives out the total amount for different days(d).
 
 function rentalCarCost(d) {
-    
-let cost = 40;
 
-let totalCost = d * cost;
+    let cost = 40;
 
-if (d >= 3 && d < 7) {
-    discountedCost = totalCost - 20;
-    return discountedCost;
-} else if (d >= 7) {
-    
-    superDiscountedCost = totalCost - 50
-    return superDiscountedCost;
-} else {
-    return totalCost;
+    let totalCost = d * cost;
+
+    if (d >= 3 && d < 7) {
+        discountedCost = totalCost - 20;
+        return discountedCost;
+    } else if (d >= 7) {
+
+        superDiscountedCost = totalCost - 50
+        return superDiscountedCost;
+    } else {
+        return totalCost;
+    }
+
+
+
+
+
 }
-
-
-
-
-
-  }
 
 console.log(rentalCarCost(7));
 
@@ -118,24 +118,24 @@ console.log(rentalCarCost(7));
 //
 //Use conditionals to return the proper message:
 
-function greet (name, owner) {
+function greet(name, owner) {
 
- if (name === owner) {
-     return 'Hello boss';
- } else {
-     return 'Hello guest';
- }
-  }
+    if (name === owner) {
+        return 'Hello boss';
+    } else {
+        return 'Hello guest';
+    }
+}
 
-  console.log(greet('Steve', 'Alex'));
+console.log(greet('Steve', 'Alex'));
 
- // Write a function which converts the input string to uppercase
+// Write a function which converts the input string to uppercase
 
- function makeUpperCase(str) {
- 
+function makeUpperCase(str) {
+
     strUpperCase = str.toUpperCase();
- return strUpperCase;
-  }
+    return strUpperCase;
+}
 
 //If you can't sleep, just count sheep!!
 //Task:
@@ -143,8 +143,8 @@ function greet (name, owner) {
 //Given a non-negative integer, 3 for example, return a string with a murmur: "1 sheep...2 sheep...3 sheep...". Input will always be valid, i.e. no negative integers.
 //  
 
- 
-    //your code here
+
+//your code here
 //     let numCount = num + ' sheep...';
 //     return numCount;
 //   }
@@ -152,7 +152,7 @@ function greet (name, owner) {
 // console.log((countSheep(50)));
 
 // {
- 
+
 //     for (let i = num; i > 0; i++)
 //         document.write(i + " sheep...");
 
@@ -162,14 +162,14 @@ function greet (name, owner) {
 
 //soluzione qui sopra che ammazza il browser  
 
-var countSheep = function (num){
+var countSheep = function (num) {
 
     for (let i = 1; i <= num; i++) {
         let loopedSheep = (i + ' sheep...');
         return loopedSheep;
     }
 
-    
+
 }
 
 console.log(countSheep(30));
@@ -180,18 +180,18 @@ function numberToString(num) {
     return stringedNum;
 }
 
- 
-
-  console.log(numberToString(777));
-
-  //soluzione alternativa sotto:
-
-  function numberToString(num) {
-    return ''+num;
-  }
 
 
- //Your task is to find the first element of an array that is not consecutive.
+console.log(numberToString(777));
+
+//soluzione alternativa sotto:
+
+function numberToString(num) {
+    return '' + num;
+}
+
+
+//Your task is to find the first element of an array that is not consecutive.
 
 //By not consecutive we mean not exactly 1 larger than the previous element of the array.
 //E.g. If we have an array [1,2,3,4,6,7,8] then 1 then 2 then 3 then 4 are all consecutive but 6 is not, so that's the first non-consecutive number.
@@ -214,28 +214,28 @@ function numberToString(num) {
 function otherAngle(a, b) {
     let c = 180 - (a + b);
     return c;
-  }
+}
 
 console.log(otherAngle(130, 10));
 
 //Write a function that accepts an integer n and a string s as parameters, and returns a string of s repeated exactly n times.
 
-function repeatStr (n, s) {
+function repeatStr(n, s) {
 
-let bigString = '';
+    let bigString = '';
 
-while (n > 0) {
+    while (n > 0) {
 
-    bigString += s;
-    n--;
-    
-}
-return bigString;
+        bigString += s;
+        n--;
+
+    }
+    return bigString;
 }
 
 console.log(repeatStr(10, 'abc'));
 
-function doTheThing(a, b){
+function doTheThing(a, b) {
 
     let blabla = '';
 
@@ -243,53 +243,53 @@ function doTheThing(a, b){
         blabla = blabla + a;
         b--
     }
-return blabla
+    return blabla
 }
 
 console.log(doTheThing('abc', 10));
 
 
 function updateLight(current) {
-  
+
     if (current === 'green') {
-       return 'yellow' 
+        return 'yellow'
     } else if (current === 'yellow') {
         return 'red';
     } else {
         return 'green';
     }
-  
-  }
 
-  console.log(updateLight('red'));
+}
 
-  function feast(beast, dish) {
- 
-    if (beast [0] === dish [0] && beast[beast.length-1] === dish [dish.length-1]){
+console.log(updateLight('red'));
+
+function feast(beast, dish) {
+
+    if (beast[0] === dish[0] && beast[beast.length - 1] === dish[dish.length - 1]) {
         return true;
     } else {
         return false;
     }
 
+}
+
+console.log(feast('chickadee students', 'chocolate cakes'));
+
+
+function twiceAsOld(dadYearsOld, sonYearsOld) {
+
+    if (dadYearsOld === 2 * sonYearsOld) {
+        return 2 * sonYearsOld - dadYearsOld;
+    } else if (dadYearsOld !== 2 * sonYearsOld && dadYearsOld - 2 * sonYearsOld > 0) {
+        return dadYearsOld - 2 * sonYearsOld;
+    } else {
+        return 2 * sonYearsOld - dadYearsOld;
     }
 
-    console.log(feast('chickadee students', 'chocolate cakes'));
 
+}
 
-    function twiceAsOld(dadYearsOld, sonYearsOld) {
-    
-      if (dadYearsOld === 2*sonYearsOld){
-        return 2*sonYearsOld - dadYearsOld;
-      } else if (dadYearsOld !== 2*sonYearsOld && dadYearsOld - 2*sonYearsOld >0){
-        return dadYearsOld - 2*sonYearsOld;
-      } else {
-        return 2*sonYearsOld - dadYearsOld;
-      }
-
-
-      }
-
-      console.log(twiceAsOld(30, 15));
+console.log(twiceAsOld(30, 15));
 
 //In this kata you will create a function that takes a 
 //list of non-negative integers and strings and returns a new list with the strings filtered out.
@@ -297,17 +297,68 @@ function updateLight(current) {
 
 
 function filter_list(l) {
-    return l.filter(element => typeof(element) === 'number');
+    return l.filter(element => typeof (element) === 'number');
 }
 
 //Write function RemoveExclamationMarks which removes all exclamation marks from a given string.
 
 function removeExclamationMarks(s) {
     if (s.includes('!')) {
-     const newString = s.replace('!', ''); 
-     return newString;
+        const newString = s.replace('!', '');
+        return newString;
     } else {
-     return s;
+        return s;
     }
- }
- 
+}
+
+
+//  The Western Suburbs Croquet Club has two categories of membership, Senior and Open. They would like your help with an application form that will tell prospective members which category they will be placed.
+
+//  To be a senior, a member must be at least 55 years old and have a handicap greater than 7. In this croquet club, handicaps range from -2 to +26; the better the player the lower the handicap.
+//  Input
+
+//  Input will consist of a list of pairs. Each pair contains information for a single potential member. Information consists of an integer for the person's age and an integer for the person's handicap.
+//  Output
+
+//  Output will consist of a list of string values (in Haskell and C: Open or Senior) stating whether the respective member is to be placed in the senior or open category. 
+
+
+function openOrSenior(data) {
+
+    const result = [];
+
+    for (let i = 0; i < data.length; i++) {
+        const element = data[i];
+        if (element[0] >= 55 && element[1] > 7) {
+
+            result.push('Senior')
+        } else {
+            result.push('Open')
+        }
+
+
+    }
+
+    return result;
+
+}
+
+
+// Complete the findNextSquare method that finds the next integral perfect square after the one passed as a parameter. 
+// Recall that an integral perfect square is an integer n such that sqrt(n) is also an integer.
+// If the parameter is itself not a perfect square then -1 should be returned. You may assume the parameter is non-negative.
+
+function findNextSquare(sq) {
+    
+    let nextN = Math.sqrt(sq) + 1;
+
+    let nextSq = nextN * nextN
+
+    if (Number.isInteger(Math.sqrt(sq))) {
+        
+        return nextSq;
+    } else {
+
+    return -1;
+    }
+}
