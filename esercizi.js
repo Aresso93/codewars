@@ -383,7 +383,128 @@ function findOutlier(integers){
     } else {
         return 'undefined'
     }
-
-  
  
   }
+
+//Your task is to sort a given string. Each word in the string will contain a single number. This number is the position the word should have in the result.
+
+//Note: Numbers can be from 1 to 9. So 1 will be the first word (not 0).
+
+//If the input string is empty, return an empty string. The words in the input String will only contain valid consecutive numbers.
+
+// function order(words){
+//     let newArray = []
+//     const stringsArray = words.split(' ');
+//     for (let i = 0; i < stringsArray.length; i++) {
+//         const string = stringsArray[i];
+        
+//         if (string.includes('1')) {
+//             newArray.push(string)
+//         } 
+//         if (string.includes('2')) {
+//             newArray.push(string)
+//         } if (string.includes('3')){
+//             newArray.push(string)
+//         } if (string.includes('4')){
+//             newArray.push(string)
+//         } if (string.includes('5')){
+//             newArray.push(string)
+//         } if (string.includes('6')){
+//             newArray.push(string)
+//         } if (string.includes('7')){
+//             newArray.push(string)
+//         } if (string.includes('8')){
+//             newArray.push(string)
+//         } if (string.includes('9')){
+//             newArray.push(string)
+//         } if (string === '') {
+//             return '';
+//         }
+//         return newArray;
+        
+//     } 
+//     console.log(newArray);
+//   }
+
+
+// Create a function taking a positive integer between 1 and 3999 (both included) as its parameter and returning a string containing the Roman Numeral representation of that integer.
+
+// Modern Roman numerals are written by expressing each digit separately starting with the left most digit and skipping any digit with a value of zero. 
+// In Roman numerals 1990 is rendered: 1000=M, 900=CM, 90=XC; resulting in MCMXC. 2008 is written as 2000=MM, 8=VIII; or MMVIII. 1666 uses each Roman symbol in descending order: MDCLXVI.
+
+
+// function solution(number){
+   
+//   }
+
+//Complete the solution so that the function will break up camel casing, using a space between words.
+
+function solution(string) {
+
+ const result = string.split(/(?=[A-Z])/)
+ 
+    return result.join(' ');
+}
+
+
+// Given an array (arr) as an argument complete the function countSmileys that should return the total number of smiling faces.
+
+// Rules for a smiling face:
+
+//     Each smiley face must contain a valid pair of eyes. Eyes can be marked as : or ;
+//     A smiley face can have a nose but it does not have to. Valid characters for a nose are - or ~
+//     Every smiling face must have a smiling mouth that should be marked with either ) or D
+
+// No additional characters are allowed except for those mentioned.
+
+// Valid smiley face examples: :) :D ;-D :~)
+// Invalid smiley faces: ;( :> :} :]
+
+function countSmileys(arr) {
+   
+    let smileyArray = []
+
+    for (let i = 0; i < arr.length; i++) {
+        const face = arr[i];
+        
+        if (face.includes(':)') || face.includes(':D') || face.includes(';)') || face.includes(';D') || face.includes(':-)') || face.includes(':-D') || face.includes(';-)') || face.includes(';-D') || face.includes(':~)') || face.includes(';~)') || face.includes(':~D') || face.includes(';~D')) {
+            
+            smileyArray.push(face);
+
+        }
+
+        return smileyArray.length
+    }
+
+    return 0;
+  }
+
+//   The marketing team is spending way too much time typing in hashtags.
+// Let's help them with our own Hashtag Generator!
+
+// Here's the deal:
+
+//     It must start with a hashtag (#).
+//     All words must have their first letter capitalized.
+//     If the final result is longer than 140 chars it must return false.
+//     If the input or the result is an empty string it must return false.
+
+function generateHashtag (str) {
+
+let splitString = str.split(' ')
+
+   for (let i = 0; i < splitString.length; i++) {
+    const word = splitString[i];
+
+    firstChar = word[0].toUpperCase();
+    restOfTheWord = word.slice.atChar(1).toLowerCase();
+    
+    capitalisedWord = firstChar + restOfTheWord;
+    console.log(generateHashtag('canguri mannari potentissimi'));
+   }
+    
+    //let hashtag = '#' + capitalisedWord; 
+
+}
+
+console.log(generateHashtag('canguri mannari potentissimi'));
