@@ -479,6 +479,7 @@ function countSmileys(arr) {
     return 0;
   }
 
+
 //   The marketing team is spending way too much time typing in hashtags.
 // Let's help them with our own Hashtag Generator!
 
@@ -489,22 +490,51 @@ function countSmileys(arr) {
 //     If the final result is longer than 140 chars it must return false.
 //     If the input or the result is an empty string it must return false.
 
-function generateHashtag (str) {
+function generateHashtag(str) {
+    if (str.trim() === '') {
+        return false;
+    }
 
-let splitString = str.split(' ')
+    const words = str.split(' ');
 
-   for (let i = 0; i < splitString.length; i++) {
-    const word = splitString[i];
+    const capitalizedWords = words.map(word => {
+        const capitalized = word.charAt(0).toUpperCase() + word.slice(1).toLowerCase();
+        return capitalized;
+    });
 
-    firstChar = word[0].toUpperCase();
-    restOfTheWord = word.slice.atChar(1).toLowerCase();
-    
-    capitalisedWord = firstChar + restOfTheWord;
-    console.log(generateHashtag('canguri mannari potentissimi'));
-   }
-    
-    //let hashtag = '#' + capitalisedWord; 
+    const hashtag = '#' + capitalizedWords.join('');
 
+    if (hashtag.length <= 140) {
+        return hashtag;
+    } else {
+        return false;
+    }
 }
 
-console.log(generateHashtag('canguri mannari potentissimi'));
+
+// Write a function toWeirdCase (weirdcase in Ruby) that accepts a string, and returns the same string with all even indexed characters in each word upper cased, and all odd indexed characters in each word lower cased. 
+//The indexing just explained is zero based, so the zero-ith index is even, therefore that character should be upper cased and you need to start over for each word.
+
+// The passed in string will only consist of alphabetical characters and spaces(' '). Spaces will only be present if there are multiple words. Words will be separated by a single space(' ').
+
+function toWeirdCase(string){
+    const words = string.split(' ')
+
+    const resultWords = words.map(word => {
+        let transformedWord = '';
+        for(let i = 0; i < word.length; i++){
+            if (i % 2 !== 0) {
+                transformedWord += word[i].toLowerCase();
+            }
+            else {
+                transformedWord += word[i].toUpperCase();
+             }   
+        }
+        return transformedWord
+    })
+
+    return resultWords.join(' ')
+   
+}
+
+  console.log(toWeirdCase('faraoni gialli maledetti bastardi'));
