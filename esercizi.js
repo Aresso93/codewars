@@ -570,3 +570,55 @@ function sortArray(array) {
     return array;
   }
 
+//   In this example you have to validate if a user input string is alphanumeric. The given string is not nil/null/NULL/None, so you don't have to check that.
+
+//   The string has the following conditions to be alphanumeric:
+  
+//       At least one character ("" is not valid)
+//       Allowed characters are uppercase / lowercase latin letters and digits from 0 to 9
+//       No whitespaces / underscore
+  
+function alphanumeric(string){
+    const specialChars = /[^a-zA-Z0-9]/;
+    if (string.match(specialChars) || string === '') {
+        return false;
+    } else {
+        return true;
+    }
+  }
+
+  //Write a function that when given a URL as a string, parses out just the domain name and returns it as a string. For example:
+
+  function domainName(url){
+
+    if (url.includes('www')) {
+        
+        let splitUrl = url.split('www.')
+        console.log(splitUrl);
+        let moreSplitUrl = splitUrl[1].split('.')
+        return moreSplitUrl[0];
+    } else if(url.includes('http')){
+
+        let splitUrl = url.split('//')
+        let moreSplitUrl = splitUrl[1].split('.')
+        return moreSplitUrl[0];
+
+    } else {
+        let splitUrl = url.split('.')
+        return splitUrl[0];
+    }
+    
+  }
+  console.log(domainName('https://www.codewars.com/kata/514a024011ea4fb54200004b/train/javascript'));
+  console.log(domainName('http://github.com/carbonfive/raygun'));
+  
+  function scramble(str1, str2) {
+    
+    if (str2.match(str1)) {
+        return true;
+    } else {
+
+    return false;
+    }
+  }
+  
