@@ -622,3 +622,53 @@ function alphanumeric(string){
     }
   }
   
+//   Complete the function that
+
+//     accepts two integer arrays of equal length
+//     compares the value each member in one array to the corresponding member in the other
+//     squares the absolute value difference between those two values
+//     and returns the average of those squared absolute value difference between each member pair.
+
+
+function exercise(firstArray, secondArray) {
+  firstArray.length = secondArray.length;
+    let resultArray = [];
+  for (let i = 0; i < firstArray.length; i++) {
+    const number = firstArray[i];
+    const secondNumber = secondArray[i]
+    let firstResult = number - secondNumber
+    
+    console.log(firstResult);
+    let secondResult = Math.abs(firstResult)
+    console.log(secondResult);
+    let thirdResult = Math.pow(secondResult, 2)
+    console.log(thirdResult);
+    resultArray.push(thirdResult)
+    console.log(resultArray);
+
+  }
+
+  let sum = resultArray.reduce((acc, currentValue) => {
+    return acc + currentValue;
+  }, 0)
+
+  let avg = sum / resultArray.length;
+  return avg;
+
+}
+
+console.log(exercise([1, 2, 3], [4, 5, 6]));
+
+
+// Write a program that will calculate the number of trailing zeros in a factorial of a given number.
+
+// N! = 1 * 2 * 3 *  ... * N
+
+// Be careful 1000! has 2568 digits...
+
+// For more info, see: http://mathworld.wolfram.com/Factorial.html 
+
+
+function zeros (n) {
+    
+  }
