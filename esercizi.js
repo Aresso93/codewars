@@ -659,16 +659,56 @@ function exercise(firstArray, secondArray) {
 
 console.log(exercise([1, 2, 3], [4, 5, 6]));
 
+// Given an array of integers, find the one that appears an odd number of times.
 
-// Write a program that will calculate the number of trailing zeros in a factorial of a given number.
+// There will always be only one integer that appears an odd number of times.
+// Examples
 
-// N! = 1 * 2 * 3 *  ... * N
+// [7] should return 7, because it occurs 1 time (which is odd).
+// [0] should return 0, because it occurs 1 time (which is odd).
+// [1,1,2] should return 2, because it occurs 1 time (which is odd).
+// [0,1,0,1,0] should return 0, because it occurs 3 times (which is odd).
+// [1,2,2,3,3,3,4,3,3,3,2,2,1] should return 4, because it appears 1 time (which is odd).
 
-// Be careful 1000! has 2568 digits...
-
-// For more info, see: http://mathworld.wolfram.com/Factorial.html 
-
-
-function zeros (n) {
+function findOdd(A) {
+const occurrences = A.reduce(function (acc, curr) {
+        return acc[curr] ? ++acc[curr] : acc[curr] = 1, acc
+      }, {});
     
+  console.log(occurrences);
+
+for (const property in occurrences) {
+  console.log(`${property}: ${occurrences[property]}`);
+
+  if(`${occurrences[property]}` % 2 !== 0){
+    return Number(property);
+  }
+
+}
+
+}
+
+console.log(findOdd([1,2,2,3,3,3,4,3,3,3,2,2,1]));
+
+// Return the number (count) of vowels in the given string.
+
+// We will consider a, e, i, o, u as vowels for this Kata (but not y).
+
+// The input string will only consist of lower case letters and/or spaces.
+
+
+function getCount(str) {
+    let strArray = str.split('');
+    let newArray = [];
+    for (let i = 0; i < strArray.length; i++) {
+        const character = strArray[i];
+        if (character === 'a' || character === 'e' || character === 'i' || character === 'o' || character === 'u') {
+            newArray.push(character)
+        }
+
+       
+
+    }
+
+    return newArray.length
   }
