@@ -712,3 +712,55 @@ function getCount(str) {
 
     return newArray.length
   }
+
+//You probably know the "like" system from Facebook and other pages. People can "like" blog posts, pictures or other items. We want to create the text that should be displayed next to such an item.
+//Implement the function which takes an array containing the names of people that like an item. It must return the display text as shown in the examples:
+
+function likes(names) {
+
+    if (names.length === 0){
+        return 'no one likes this'
+    } else if (names.length === 1){
+        return names[0] + 'likes this'
+    } else if (names.length === 2){
+        return names[0] + 'and ' + names[1] + 'like this'
+    } else if (names.length === 3){
+        return names[0] + ', ' + names[1] + 'and ' + names[2] + 'like this';
+    } else {
+        return names[0] + ', ' + names[1] + 'and ' + (names.length - 2) + ' others like this'
+    }
+}
+
+//Take 2 strings s1 and s2 including only letters from a to z. Return a new sorted string, the longest possible, 
+//containing distinct letters - each taken only once - coming from s1 or s2.
+
+function longest(s1, s2) {
+   
+    let s1Array = s1.split('')
+    let s2Array = s2.split('');
+
+    for (let i = 0; i < s2Array.length; i++) {
+        
+        s1Array.push(s2Array[i]);
+        
+    }
+
+    console.log(s1Array);
+
+    let s1ArrayNoDuplicates = [];
+    s1Array.forEach(element => {
+        if (!s1ArrayNoDuplicates.includes(element)) {
+            s1ArrayNoDuplicates.push(element);
+        }
+    });
+
+    console.log(s1ArrayNoDuplicates);
+
+    return s1ArrayNoDuplicates.sort().join('')
+
+    }
+ 
+    
+
+console.log("xyaabbbccccdefww", "xxxxyyyyabklmopq");
+console.log(longest("xyaabbbccccdefww", "xxxxyyyyabklmopq"));
