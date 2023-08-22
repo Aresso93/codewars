@@ -764,3 +764,96 @@ function longest(s1, s2) {
 
 console.log("xyaabbbccccdefww", "xxxxyyyyabklmopq");
 console.log(longest("xyaabbbccccdefww", "xxxxyyyyabklmopq"));
+
+// Create a function with two arguments that will return an array of the first n multiples of x.
+
+// Assume both the given number and the number of times to count will be positive numbers greater than 0.
+
+// Return the results as an array or list ( depending on language ).
+
+function countBy(x, n) {
+    let z = [];
+  
+    for (let i = 1; i <= n; i++) {
+        z.push(x * i)
+    }
+
+    return z;
+  }
+
+
+// Instructions
+// Output
+
+// Implement a function that adds two numbers together and returns their sum in binary. The conversion can be done before, or after the addition.
+
+// The binary number returned should be a string.
+
+// Examples:(Input1, Input2 --> Output (explanation)))
+
+function addBinary(a,b) {
+    return (a + b).toString(2);
+    }
+
+    //questo funziona, ma avevo anche trovato una versione su StackOverflow che faceva un controllo aggiuntivo e che a Codewars non piaceva:
+
+function dec2bin2(a, b) {
+    return (a + b >>> 0).toString(2);
+  }
+      
+
+//   This time no story, no theory. The examples below show you how to write function accum:
+//   Examples:
+  
+//   accum("abcd") -> "A-Bb-Ccc-Dddd"
+//   accum("RqaEzty") -> "R-Qq-Aaa-Eeee-Zzzzz-Tttttt-Yyyyyyy"
+//   accum("cwAt") -> "C-Ww-Aaa-Tttt"
+  
+  
+function accum(s) {
+	
+    let accumArray = s.split('')
+    let newArray = []
+
+    for (let i = 0; i < accumArray.length; i++) {
+        const element = accumArray[i];
+        let elementIndex = i + 1
+        newArray.push(element.toUpperCase() + element.toLowerCase().repeat(elementIndex - 1));
+
+    }
+
+    return newArray.join('-')
+
+}
+
+// Write function bmi that calculates body mass index (bmi = weight / height2).
+
+// if bmi <= 18.5 return "Underweight"
+
+// if bmi <= 25.0 return "Normal"
+
+// if bmi <= 30.0 return "Overweight"
+
+// if bmi > 30 return "Obese"
+
+function bmi(weight, height) {
+
+    let bmivar = weight / (height *2);
+
+   
+    if (bmivar <= 18.5) {
+        return "Underweight"
+    } 
+    
+    if (bmivar <= 25) {
+        return "Normal"
+    } 
+    
+    if(bmivar <= 30) {
+        return "Overweight"
+    }
+    if(bmivar > 30) {
+        return "Obese"
+    }
+
+  }
