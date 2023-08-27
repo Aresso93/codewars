@@ -858,4 +858,3 @@ function bmi(weight, height) {
 
   }
 
-  
