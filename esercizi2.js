@@ -306,7 +306,7 @@ function countPositivesSumNegatives(input) {
  
 console.log(countPositivesSumNegatives([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]));
 
-function countPositivesSumNegatives(input) 
+//function countPositivesSumNegatives(input) 
 
 //DA SISTEMARE 
 
@@ -322,4 +322,92 @@ function countPositivesSumNegatives(input)
 
 function arrayDiff(a, b) {
   
+  let finalArray = a.filter(function(el){
+    return !b.includes(el)
+  })
+
+  return finalArray;
+}
+
+// Welcome.
+
+// In this kata you are required to, given a string, replace every letter with its position in the alphabet.
+
+// If anything in the text isn't a letter, ignore it and don't return it.
+
+// "a" = 1, "b" = 2, etc.
+// Example
+
+// alphabetPosition("The sunset sets at twelve o' clock.")
+
+// Should return "20 8 5 19 21 14 19 5 20 19 5 20 19 1 20 20 23 5 12 22 5 15 3 12 15 3 11" ( as a string )
+
+function alphabetPosition(text) {
+  var chari,
+      arr = [],
+      alphabet = "abcdefghijklmnopqrstuvwxyz",
+      i;
+
+  for (var i = 0; i < text.length; i++){
+      chari = text[i].toLowerCase();
+      if (alphabet.indexOf(chari) !== -1){
+          arr.push(alphabet.indexOf(chari)+1);
+      }
+  }
+  return arr.join(' ');
+}
+console.log(alphabetPosition("Hello World!!1"));
+
+console.log(alphabetPosition('The sunset sets at twelve o\' clock.'));
+
+//preso da StackOverflow e modificato da me
+
+// Consider an array/list of sheep where some sheep may be missing from their place. We need a function that counts the number of sheep present in the array (true means present).
+
+// For example,
+
+// [true,  true,  true,  false,
+//   true,  true,  true,  true ,
+//   true,  false, true,  false,
+//   true,  false, false, true ,
+//   true,  true,  true,  true ,
+//   false, false, true,  true]
+
+// The correct answer would be 17.
+
+// Hint: Don't forget to check for bad values like null/undefined
+
+function countSheeps(arrayOfSheep) {
+  let presentSheep = [];
+  for (let i = 0; i < arrayOfSheep.length; i++) {
+    const element = arrayOfSheep[i];
+    
+    if (element === true) {
+      presentSheep.push(element)
+    }
+
+  }
+  return presentSheep.length
+}
+
+// There was a test in your class and you passed it. Congratulations!
+// But you're an ambitious person. You want to know if you're better than the average student in your class.
+
+// You receive an array with your peers' test scores. Now calculate the average and compare your score!
+
+// Return True if you're better, else False!
+// Note:
+
+// Your points are not included in the array of your class's points. For calculating the average point you may add your point to the given array!
+
+function betterThanAverage(classPoints, yourPoints) {
+ 
+  let classAverage = classPoints.reduce((a, b) => a + b, 0) / classPoints.length;
+
+  if (yourPoints > classAverage) {
+    return true;
+  } else {
+    return false;
+  }
+
 }
