@@ -411,3 +411,204 @@ function betterThanAverage(classPoints, yourPoints) {
   }
 
 }
+
+
+// Complete the solution so that it returns true if the first argument(string) passed in ends with the 2nd argument (also a string).
+
+// Examples:
+
+// solution('abc', 'bc') // returns true
+// solution('abc', 'd') // returns false
+
+function solution(str, ending){
+  
+let strArray = str.split('')
+let endingArray = ending.split('')
+let tempArray = []
+
+  for (let i = strArray.length - endingArray.length; i < strArray.length ; i++) {
+    const element = strArray[i];
+    tempArray.push(element)
+  }
+
+  return tempArray.join('') === ending;
+}
+
+// You are going to be given an array of integers. Your job is to take that array and find an index N where the sum of the integers to the left of N is equal to the sum of the integers to the right of N. If there is no index that would make this happen, return -1.
+
+// Let's say you are given the array {1,2,3,4,3,2,1}:
+// Your function will return the index 3, because at the 3rd position of the array, the sum of left side of the index ({1,2,3}) and the sum of the right side of the index ({3,2,1}) both equal 6.
+
+// Let's look at another one.
+// You are given the array {1,100,50,-51,1,1}:
+// Your function will return the index 1, because at the 1st position of the array, the sum of left side of the index ({1}) and the sum of the right side of the index ({50,-51,1,1}) both equal 1.
+
+// Last one:
+// You are given the array {20,10,-80,10,10,15,35}
+// At index 0 the left side is {}
+// The right side is {10,-80,10,10,15,35}
+// They both are equal to 0 when added. (Empty arrays are equal to 0 in this problem)
+// Index 0 is the place where the left side and right side are equal.
+
+// Note: Please remember that in most programming/scripting languages the index of an array starts at 0.
+
+// Input:
+// An integer array of length 0 < arr < 1000. The numbers in the array can be any integer positive or negative.
+
+// Output:
+// The lowest index N where the side to the left of N is equal to the side to the right of N. If you do not find an index that fits these rules, then you will return -1.
+
+// Note:
+// If you are given an array with multiple answers, return the lowest correct index.
+
+function findEvenIndex(arr)
+{
+for (let i = 0; i < arr.length; i++) {
+    const leftSum = arr.slice(0, i).reduce((sum, num) => sum + num, 0);
+    const rightSum = arr.slice(i + 1).reduce((sum, num) => sum + num, 0);
+    
+    if (leftSum === rightSum) {
+      return i;
+    }
+  }
+  
+  return -1;
+}
+
+// Take an array and remove every second element from the array. Always keep the first element and start removing with the next element.
+// Example:
+
+// ["Keep", "Remove", "Keep", "Remove", "Keep", ...] --> ["Keep", "Keep", "Keep", ...]
+
+// None of the arrays will be empty, so you don't have to worry about that!
+
+function removeEveryOther(arr){
+  
+  let keepArray = []
+  for (let i = 0; i < arr.length; i++) {
+    const element = arr[i];
+    
+    if (i % 2 === 0) {
+      keepArray.push(element)
+    }
+    console.log(element);
+    console.log(keepArray);
+  }
+
+return keepArray  
+
+}
+
+console.log(removeEveryOther(["Keep", "Remove", "Keep", "Remove", "Keep"]));
+
+// Welcome. In this kata, you are asked to square every digit of a number and concatenate them.
+
+// For example, if we run 9119 through the function, 811181 will come out, because 92 is 81 and 12 is 1. (81-1-1-81)
+
+// Example #2: An input of 765 will/should return 493625 because 72 is 49, 62 is 36, and 52 is 25. (49-36-25)
+
+// Note: The function accepts an integer and returns an integer.
+
+// Happy Coding!
+
+
+function squareDigits(num){
+  let str = num.toString()
+  let strArray = str.split('')
+  let squareArray = []
+
+  for (let i = 0; i < strArray.length; i++) {
+    const element = strArray[i];
+    
+    squareArray.push(element * element)
+  }
+
+  const digitString = squareArray.join('')
+
+  return parseInt(digitString)
+}
+
+console.log(squareDigits(679));
+
+// Check to see if a string has the same amount of 'x's and 'o's. The method must return a boolean and be case insensitive. The string can contain any char.
+
+// Examples input/output:
+
+// XO("ooxx") => true
+// XO("xooxx") => false
+// XO("ooxXm") => true
+// XO("zpzpzpp") => true // when no 'x' and 'o' is present should return true
+// XO("zzoo") => false
+
+function XO(str) {
+  
+  let strArray = str.toLowerCase().split('')
+  let countX = []
+  let countO = []
+
+  for (let i = 0; i < strArray.length; i++) {
+    const element = strArray[i];
+    
+    if(element === 'x'){
+      countX.push(element)
+    } else if(element === 'o'){
+      countO.push(element)
+    }
+
+  } 
+
+  if (countX.length === countO.length) {
+    return true;
+  } else {
+    return false
+  }
+
+}
+
+// Given a set of numbers, return the additive inverse of each. Each positive becomes negatives, and the negatives become positives.
+
+// invert([1,2,3,4,5]) == [-1,-2,-3,-4,-5]
+// invert([1,-2,3,-4,5]) == [-1,2,-3,4,-5]
+// invert([]) == []
+
+// You can assume that all values are integers. Do not mutate the input array/list.
+
+function invert(array) {
+  let negaArray = []
+  for (let i = 0; i < array.length; i++) {
+    let element = array[i];
+    const negElement = element * (-1)
+    negaArray.push(negElement)
+  }
+  return negaArray
+}
+
+// Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
+// Examples
+
+// "This is an example!" ==> "sihT si na !elpmaxe"
+// "double  spaces"      ==> "elbuod  secaps"
+
+function reverseWords(str) {
+  let strArray = str.split(' ')
+  let wordsArray = []
+  let reverseArray = []
+  console.log(str);
+  for (let i = 0; i < strArray.length; i++) {
+    const element = strArray[i];
+    wordsArray.push(element)
+
+  }
+  console.log(wordsArray);
+
+  for (let j = wordsArray.length-1; j >= 0; j--) {
+    const element = wordsArray[j];
+    const charElement = element.split('')
+    reverseArray.push(charElement)
+    console.log(reverseArray);
+  }
+}
+
+
+
+console.log(reverseWords('Cherchi nudo calvo forma verdadera!'));
