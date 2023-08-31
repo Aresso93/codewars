@@ -583,32 +583,51 @@ function invert(array) {
   return negaArray
 }
 
-// Complete the function that accepts a string parameter, and reverses each word in the string. All spaces in the string should be retained.
-// Examples
+// Given two integers a and b, which can be positive or negative, find the sum of all the integers between and including them and return it. If the two numbers are equal return a or b.
 
-// "This is an example!" ==> "sihT si na !elpmaxe"
-// "double  spaces"      ==> "elbuod  secaps"
+// Note: a and b are not ordered!
+// Examples (a, b) --> output (explanation)
 
-function reverseWords(str) {
-  let strArray = str.split(' ')
-  let wordsArray = []
-  let reverseArray = []
-  console.log(str);
-  for (let i = 0; i < strArray.length; i++) {
-    const element = strArray[i];
-    wordsArray.push(element)
+// (1, 0) --> 1 (1 + 0 = 1)
+// (1, 2) --> 3 (1 + 2 = 3)
+// (0, 1) --> 1 (0 + 1 = 1)
+// (1, 1) --> 1 (1 since both are same)
+// (-1, 0) --> -1 (-1 + 0 = -1)
+// (-1, 2) --> 2 (-1 + 0 + 1 + 2 = 2)
 
+// Your function should only return a number, not the explanation about how you get that number.
+
+function getSum(a, b){
+  let array = []
+  
+  if (a >= b) {
+    array.push(b)
+    array.push(a)
+  } else {
+    array.push(a)
+    array.push(b)
   }
-  console.log(wordsArray);
 
-  for (let j = wordsArray.length-1; j >= 0; j--) {
-    const element = wordsArray[j];
-    const charElement = element.split('')
-    reverseArray.push(charElement)
-    console.log(reverseArray);
+  for (let i = 0; i < array.length; i++) {
+    const element = array[i];
+    
+    if (element < array[1] && element !== array[1]) {
+      array.push(element +1)
+    }
+    
   }
+array.pop(-1)
+
+return array.reduce((accumulator, currentValue) => accumulator + currentValue, 0);
 }
 
 
+// Create a function that returns the sum of the two lowest positive numbers given an array of minimum 4 positive integers. No floats or non-positive integers will be passed.
 
-console.log(reverseWords('Cherchi nudo calvo forma verdadera!'));
+// For example, when an array is passed like [19, 5, 42, 2, 77], the output should be 7.
+
+// [10, 343445353, 3453445, 3453545353453] should return 3453455.
+
+function sumTwoSmallestNumbers(numbers) {  
+  
+}
