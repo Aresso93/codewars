@@ -673,3 +673,48 @@ function printerError(s) {
 }
 
 
+//Given an array of ones and zeroes, convert the equivalent binary value to an integer.
+
+//Eg: [0, 0, 0, 1] is treated as 0001 which is the binary representation of 1.
+
+const binaryArrayToNumber = arr => {
+  let str = arr.join('')
+  return parseInt(str, 2)
+};
+
+
+const quarterOf = (month) => {
+  
+  if (month >= 1 && month <= 3) {
+    return 1
+  } else if(month >= 4 && month <= 6){
+    return 2
+  } else if(month >= 7 && month <= 9){
+    return 3
+  } else if(month >= 10 && month <= 12){
+    return 4
+  } 
+  
+}
+
+
+//The main idea is to count all the occurring characters in a string. If you have a string like aba, then the result should be {'a': 2, 'b': 1}.
+
+//What if the string is empty? Then the result should be empty object literal, {}.
+
+function count(string) {
+  let strArray = string.split('')
+  const count = {}
+  
+  for (const element of strArray) {
+   if (count[element]) {
+      count[element] += 1
+   } else {
+      count[element] = 1
+   }
+    
+  }
+
+  return count
+}
+console.log(count('TATSUMAKI'));
