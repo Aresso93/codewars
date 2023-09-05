@@ -718,3 +718,85 @@ function count(string) {
   return count
 }
 console.log(count('TATSUMAKI'));
+
+// Write a function that takes an array of numbers (integers for the tests) and a target number. It should find two different items in the array that, when added together, give the target value. The indices of these items should then be returned in a tuple / list (depending on your language) like so: (index1, index2).
+
+// For the purposes of this kata, some tests may have multiple answers; any valid solutions will be accepted.
+
+// The input will always be valid (numbers will be an array of length 2 or greater, and all of the items will be numbers; target will always be the sum of two different items from that array).
+
+// Based on: http://oj.leetcode.com/problems/two-sum/
+
+// twoSum([1, 2, 3], 4) // returns [0, 2] or [2, 0]
+
+function twoSum(numbers, target) {
+  let indexes = [];
+
+  for (let i = 0; i < numbers.length; i++) {
+    for (let j = i + 1; j < numbers.length; j++) {
+      if (numbers[i] + numbers[j] === target) {
+        indexes.push(i, j);
+        return indexes; 
+      }
+    }
+  }
+
+
+  return null;
+}
+
+console.log(twoSum([1, 2, 3, 4, 5, 6], 6));
+
+//RISOLTO MA CON CHATGPT
+
+// Trolls are attacking your comment section!
+
+// A common way to deal with this situation is to remove all of the vowels from the trolls' comments, neutralizing the threat.
+
+// Your task is to write a function that takes a string and return a new string with all vowels removed.
+
+// For example, the string "This website is for losers LOL!" would become "Ths wbst s fr lsrs LL!".
+
+// Note: for this kata y isn't considered a vowel.
+
+function disemvowel(str) {
+  const noVowels = str.replace(/[aeiou]/gi, '');
+  return noVowels
+}
+
+// In this little assignment you are given a string of space separated numbers, and have to return the highest and lowest number.
+// Examples
+
+// highAndLow("1 2 3 4 5");  // return "5 1"
+// highAndLow("1 2 -3 4 5"); // return "5 -3"
+// highAndLow("1 9 3 4 -5"); // return "9 -5"
+
+// Notes
+
+//     All numbers are valid Int32, no need to validate them.
+//     There will always be at least one number in the input string.
+//     Output string must be two numbers separated by a single space, and highest number is first.
+
+function highAndLow(numbers){
+  let numbArray = numbers.split(' ')
+  console.log(numbArray);
+  let solution = []
+  for (let i = 0; i < numbArray.length; i++) {
+    const element = numbArray[i];
+    parseInt(element, 2)
+    console.log(element);
+  }
+
+  const min = Math.min(...numbArray)
+  const max = Math.max(...numbArray)
+
+  solution.push(max)
+  solution.push(min)
+  console.log(solution);  
+  let solutionStr = solution.join(' ')
+  console.log(solutionStr);
+  
+  return solutionStr
+}
+
+console.log(highAndLow('1 2 3 4 5'));
