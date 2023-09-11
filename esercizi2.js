@@ -800,3 +800,35 @@ function highAndLow(numbers){
 }
 
 console.log(highAndLow('1 2 3 4 5'));
+
+function countPositivesSumNegatives(input) {
+  let isPositive = [];
+  let isNegative = [];
+  let solution = [];
+
+  for (let i = 0; i < input.length; i++) {
+      const element = input[i];
+
+      if (element > 0) {
+          isPositive.push(element);
+      } else if (element < 0){
+          isNegative.push(element);
+      } 
+  }
+
+  console.log(isPositive);
+  console.log(isNegative);
+
+  let positiveCount = isPositive.length;
+  let negativeSum = isNegative.reduce((acc, curr) => acc + curr, 0);
+
+  solution.push(positiveCount);
+  solution.push(negativeSum);
+
+  return solution;
+
+  // console.log(isPositive);
+  // console.log(isNegative);
+}
+
+console.log(countPositivesSumNegatives([1, 2, 3, 4, 5, 6, 7, 8, 9, 10, -11, -12, -13, -14, -15]));
